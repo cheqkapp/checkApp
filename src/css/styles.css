@@ -1,0 +1,548 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: powderblue;
+  font-family: 'Century Gothic', AppleGothic, sans-serif;
+  overflow-x: hidden;
+}
+
+.container-fluid{
+  padding-right: 0;
+  padding-left:0;
+}
+
+.main {
+  /*position: absolute;*/
+  /*top: 30%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -30%);*/
+  text-align: center;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+.main h1 {
+  /*position: relative;*/
+  /*top: -10px;*/
+  font-size: 100%;
+  text-transform: uppercase;
+
+}
+
+.details {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.details ul {
+  margin-top: -10px;
+
+}
+
+.options {
+  width: 300px;
+}
+
+a {
+  text-decoration: none;
+
+}
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.element-center{
+  margin:auto;
+  text-align: center;
+}
+
+.center-image{
+  margin:auto;
+  display:block;
+  text-align: center;
+}
+
+.header{
+  margin-top: 15%;
+  margin-bottom:15%;
+}
+
+
+#welcome {
+  max-width: 215px;
+}
+
+#logo {
+  width: 150px;
+}
+
+.btn-long {
+  background-color: lightsteelblue;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: blue;
+  text-align: center;
+}
+
+.btn-square {
+  display:block;
+  background-color: royalblue;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+.btn-input {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 10px;
+  color: black;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.btn-option {
+  display: inline-block;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  box-shadow: 1px 1px 10px grey;
+  font-size: 80%;
+}
+
+.btn-option img {
+  width: 60px;
+  margin: auto;
+  margin-top: 20%;
+  padding-bottom: 3px;
+  display: block;
+
+}
+
+.btn-circle {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: mediumblue;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 1px 1px 10px black;
+}
+
+#accept {
+  background: url(phone-receiver.png) 50% 50% no-repeat;
+  background-size: 40px;
+  background-color: green;
+}
+
+#rejectwmess {
+  background: url(message.png) 50% 50% no-repeat;
+  background-size: 40px;
+  background-color: yellow;
+}
+
+#reject {
+  background: url(phone-hang-up.png) 50% 50% no-repeat;
+  background-size: 40px;
+  background-color: red;
+}
+
+#mute {
+  background: url(muted.png) 50% 50% no-repeat;
+  background-size: 40px;
+  background-color: blue;
+}
+
+#bluetooth {
+  background: url(headphones.png) 50% 50% no-repeat;
+  background-size: 40px;
+  background-color: blue;
+}
+
+#sos {
+  background: url(sos.png) 50% 50% no-repeat;
+  background-size: 40px;
+  background-color: blue;
+}
+
+
+.icon {
+  width: 50px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+
+}
+
+
+
+.garage {
+  background: url(cartop.png) 50% 50% no-repeat;
+  background-size: cover;
+  min-width: 200px;
+  min-height: 400px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7));
+}
+
+.call {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: url(officer.jpg) 50% 0% no-repeat;
+  background-size: cover;
+}
+
+.callbox {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: white;
+  width: 100px;
+  height: 150px;
+  background: url(face.jpeg) no-repeat 50% 50%;
+  background-size: cover;
+  box-shadow: 1px 1px 10px black;
+}
+
+.panel {
+  position: absolute;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  text-align: center;
+  min-width: 300px;
+
+}
+
+#endcall {
+  display: block;
+  margin: auto;
+  background: url(phone-hang-up.png) 50% 50% no-repeat;
+  background-size: 40px;
+  background-color: red;
+}
+
+.ticket {
+  border: dotted 2px black;
+  width: 250px;
+  height: 300px;
+  background-color: snow;
+}
+
+.formdiv {
+  display: inline-block;
+  margin: 5px;
+}
+
+.formdiv input {
+  vertical-align: middle;
+}
+
+.formdiv img {
+  width: 20px;
+}
+
+#incoming {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: snow;
+  display: none; //toggle between block and none
+}
+
+#incoming img {
+  margin: auto;
+  text-align: center;
+  display: block;
+  height: 180px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px black;
+}
+
+#mainBlur {
+  filter: none; //toggle between none and blur (5px)
+}
+
+.police {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 768px;
+  height: 100%;
+  text-align: center;
+}
+
+.policecallbox {
+  width: 100%;
+  height: 45%;
+}
+
+.copbox {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  background-color: grey;
+  width: 50%;
+  height: 100%;
+  background: url(officer.jpg) 50% 0% no-repeat;
+  background-size: cover;
+}
+
+.perpbox {
+  position: relative;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  background-color: grey;
+  width: 50%;
+  height: 100%;
+  background: url(face-tel.jpeg) 50% 0% no-repeat;
+  background-size: cover;
+}
+
+.infosection {
+  overflow-x: scroll;
+  height: 45%;
+}
+
+.docs {
+  padding-left: 5px;
+  text-align: left;
+  float: left;
+  width: 900px;
+}
+
+.docs img {
+  vertical-align: top;
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  background-color: grey;
+}
+
+.prior {
+  display: inline-block;
+  font-size: 70%;
+}
+
+#copend {
+  background: url(phone-hang-up.png) 50% 50% no-repeat;
+  background-size: 40px;
+  position: absolute;
+  bottom: 0;
+  background-color: red;
+}
+
+#menubutton {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+}
+
+#menubutton img {
+  width: 30px;
+}
+
+#menu {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(65, 105, 225, 0.5);
+  display: none; //toggle between none and block
+}
+
+#menupanel {
+  width: 60%;
+  height: 100%;
+  background-color: royalblue;
+  box-shadow: 1px 1px 5px black;
+  overflow: hidden;
+}
+
+#menuinner {
+  position: relative;
+  margin: 0 auto;
+  top: 50px;
+  left: 50px;
+}
+
+#menupanel img {
+  width: 100px;
+}
+
+
+#menuinner ul {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+#menuinner li {
+  color: snow;
+  text-decoration: none;
+  text-transform: uppercase;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#ticketpopup {
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: steelblue;
+  display: none;
+}
+
+#ticketpopup p {
+  margin-left: 10%;
+}
+
+#ticketpopup form {
+  margin-left: 15%;
+}
+
+#info-tab {
+  width: 100%;
+}
+
+#submitform {
+  width: 100%;
+  font-weight: 700;
+}
+
+#citationinput {
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  margin: auto;
+  width: 80%;
+  min-width: 300px;
+  background-color: steelblue;
+  position: relative;
+  bottom: 300px;
+  padding: 10px;
+  display: none;
+}
+
+#citationinput p {
+  text-align: left;
+}
+
+#citationconfirm {
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  margin: auto;
+  width: 80%;
+  min-width: 300px;
+  background-color: steelblue;
+  position: relative;
+  bottom: 300px;
+  padding: 10px;
+  display: none;
+}
+
+#citecount {
+  display: none;
+  background-color: red;
+  margin-left: 3px;
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/*padding & margin util*/
+.padding-top-xs { padding-top: .25em; }
+.padding-top-sm { padding-top: .5em; }
+.padding-top-md { padding-top: 1em; }
+.padding-top-lg { padding-top: 1.5em; }
+.padding-top-xl { padding-top: 3em; }
+
+.padding-right-xs { padding-right: .25em; }
+.padding-right-sm { padding-right: .5em; }
+.padding-right-md { padding-right: 1em; }
+.padding-right-lg { padding-right: 1.5em; }
+.padding-right-xl { padding-right: 3em; }
+
+.padding-bottom-xs { padding-bottom: .25em; }
+.padding-bottom-sm { padding-bottom: .5em; }
+.padding-bottom-md { padding-bottom: 1em; }
+.padding-bottom-lg { padding-bottom: 1.5em; }
+.padding-bottom-xl { padding-bottom: 3em; }
+
+.padding-left-xs { padding-left: .25em; }
+.padding-left-sm { padding-left: .5em; }
+.padding-left-md { padding-left: 1em; }
+.padding-left-lg { padding-left: 1.5em; }
+.padding-left-xl { padding-left: 3em; }
+
+.margin-xs { margin: .25em; }
+.margin-sm { margin: .5em; }
+.margin-md { margin: 1em; }
+.margin-lg { margin: 1.5em; }
+.margin-xl { margin: 3em; }
+
+.margin-x-xs { margin: .25em 0; }
+.margin-x-sm { margin: .5em 0; }
+.margin-x-md { margin: 1em 0; }
+.margin-x-lg { margin: 1.5em 0; }
+.margin-x-xl { margin: 3em 0; }
+
+.margin-y-xs { margin: 0 .25em; }
+.margin-y-sm { margin: 0 .5em; }
+.margin-y-md { margin: 0 1em; }
+.margin-y-lg { margin: 0 1.5em; }
+.margin-y-xl { margin: 0 3em; }
+
+.margin-top-xs { margin-top: .25em; }
+.margin-top-sm { margin-top: .5em; }
+.margin-top-md { margin-top: 1em; }
+.margin-top-lg { margin-top: 1.5em; }
+.margin-top-xl { margin-top: 3em; }
+
+.margin-right-xs { margin-right: .25em; }
+.margin-right-sm { margin-right: .5em; }
+.margin-right-md { margin-right: 1em; }
+.margin-right-lg { margin-right: 1.5em; }
+.margin-right-xl { margin-right: 3em; }
+
+.margin-bottom-xs { margin-bottom: .25em; }
+.margin-bottom-sm { margin-bottom: .5em; }
+.margin-bottom-md { margin-bottom: 1em; }
+.margin-bottom-lg { margin-bottom: 1.5em; }
+.margin-bottom-xl { margin-bottom: 3em; }
+
+.margin-left-xs { margin-left: .25em; }
+.margin-left-sm { margin-left: .5em; }
+.margin-left-md { margin-left: 1em; }
+.margin-left-lg { margin-left: 1.5em; }
+.margin-left-xl { margin-left: 3em; }

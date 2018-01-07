@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Check App">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Check App</title>
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="libs/toastr/toastr.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body data-ng-app="app">
+    <div ng-include="'app/layout/layout.html'"></div>
+
+  <!-- Javascript files -->
+
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
+
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular/angular-route.js"></script>
+    <script src="libs/angular/angular-touch.js"></script>
+    <script src="libs/angular/angular-sanitize.js"></script>
+    <script src="libs/angular/angular-resource.js"></script>
+    <script src="libs/angular/angular-animate.js"></script>
+    <script src="libs/angular/angular-messages.js"></script>
+    <script src="libs/angular/angular-aria.js"></script>
+    <script src="libs/angular/angular-cookies.js"></script>
+
+    <script src="libs/moment/moment.min.js"></script>
+    <script src="libs/toastr/toastr.min.js"></script>
+    <script src="libs/lodash/lodash.js"></script>
+
+    <!--Core-->
+    <script src="app/core/blocks/exception/exception.module.js"></script>
+    <script src="app/core/blocks/exception/exception-handler.js"></script>
+    <script src="app/core/blocks/exception/exception.js"></script>
+    <script src="app/core/blocks/logger/logger.module.js"></script>
+    <script src="app/core/blocks/logger/logger.js"></script>
+    <script src="app/core/blocks/router/router.module.js"></script>
+    <script src="app/core/blocks/router/routehelper.js"></script>
+
+    <script src="app/core/core.module.js"></script>
+
+    <!--Layout-->
+    <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/layout.controller.js"></script>
+
+    <!-- Welcome -->
+    <script src="app/welcome/welcome.module.js"></script>
+    <script src="app/welcome/welcome.controller.js"></script>
+
+    <!-- Login -->
+    <script src="app/login/login.module.js"></script>
+    <script src="app/login/login.controller.js"></script>
+
+    <!-- Search License Plate -->
+    <script src="app/searchLicensePlate/licensePlate.module.js"></script>
+    <script src="app/searchLicensePlate/licensePlate.controller.js"></script>
+
+    <!--App Config-->
+    <script src="app/app.module.js"></script>
+
+</body>
+
+</html>
