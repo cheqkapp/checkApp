@@ -1,0 +1,42 @@
+<div class="police">
+  <div class="policecallbox">
+    <div class="copbox"></div>
+    <div class="perpbox">
+      <div class="btn-circle" onclick="vm.citationSummary()" id="copend"></div>
+    </div>
+  </div>
+
+  <div class="infosection">
+    <h2>Information</h2>
+
+    <div class="docs">
+      <img src="../../images/license.jpg" alt="License">
+      <img src="../../images/insurance.gif" alt="Insurance">
+      <img src="../../images/registration.jpg" alt="Registration">
+      <div class="prior">
+        <h1>Prior Arrests</h1>
+        <ul>
+          <li>None</li>
+        </ul>
+        <h1>Prior Citations</h1>
+        <ul>
+          <li>Speeding: 02/13/2016</li>
+      </div>
+    </div>
+  </div>
+  <h1 class="btn-long" onclick="vm.openCitation()">Write Citation</h1>
+  <div id="citationinput">
+    <h3>Please Choose a Violation:</h3>
+    <form>
+      <p><input type="checkbox">Speeding:<input type="text" placeholder="Speed"></p>
+      <p><input type="checkbox">Illegal U-Turn</p>
+      <p><input type="checkbox">Unsafe Speed</p>
+      <p><input type="checkbox">Unsafe Lane Change</p>
+      <input type="submit" class="btn-long" onclick="vm.closeCitation()">
+    </form>
+  </div>
+  <div id="citationconfirm">
+    <h3>Citation Signed!</h3>
+    <button class="btn-long" onclick="vm.closeConfirm()">OK</button>
+  </div>
+</div>

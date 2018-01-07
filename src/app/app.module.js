@@ -8,7 +8,8 @@
         'welcome',
         'login',
         'licensePlate',
-        'searchDriver'
+        'searchDriver',
+        'videoChatPolice'
     ]);
 
     app
@@ -62,6 +63,14 @@
                 controllerAs: 'vm',
                 label: 'Driver Search',
                 appTitle: 'Driver Search'
+            })
+
+            .when('/videoChatPolice',{
+                templateUrl: 'app/videoChatPolice/videoChatPolice.html',
+                controller: 'VideoChatPoliceController',
+                controllerAs: 'vm',
+                label: 'Police Video Call',
+                appTitle: 'Police Video Call'
             })
 
             .otherwise({
