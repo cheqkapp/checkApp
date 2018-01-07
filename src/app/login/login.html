@@ -2,10 +2,14 @@
     <img class="center-image margin-top-xl padding-top-xl" id="mailicon" src="../../images/envelope.png" alt="Mail Icon">
     <p>&nbsp;</p>
     <p class="element-center padding-top-xl padding-bottom-xs ">Enter your Email and Password, or create an Account</p>
-    <form action="../userInfo/info.html">
-        <input id="user" class="btn-input" type="text" name="user" placeholder="Email"><br/>
-        <input id="pass" class="btn-input" type="password" name='pass' placeholder="Password"><br/>
-        <input class="icon center-image" type="image" name="submit" src="../../images/arrow.png" alt="Submit">
+    <form id="login" name="login" ng-submit="vm.changeView(login.$valid)" novalidate>
+        <input id="user" class="btn-input" type="email" name="user" placeholder="Email" ng-model="email" required >
+        <p ng-show="login.user.$pristine || login.user.$invalid" class="help-block">A valid email is required.</p>
+
+        <input id="password" class="btn-input" type="password" name='password' placeholder="Password" ng-model="password" required>
+        <p ng-show="login.password.$pristine || login.user.$invalid" class="help-block">Password is required.</p>
+
+        <input class="center-image" type="image" name="submit"  alt="Submit" src="../../images/arrow.png">
     </form>
     <p>.</p>
     <a class="center-image" href="">Create Account</a>

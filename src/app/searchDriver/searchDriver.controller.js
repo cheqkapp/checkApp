@@ -2,26 +2,26 @@
     'use strict';
 
     angular
-        .module('licensePlate')
-        .controller('LicensePlateController', LicensePlateController);
+        .module('searchDriver')
+        .controller('SearchDriverController', SearchDriverController);
 
-    LicensePlateController.$inject = ['$location'];
+    SearchDriverController.$inject = ['$location'];
     /* @ngInject */
-    function LicensePlateController($location) {
+    function SearchDriverController($location) {
         var vm = this;
         vm.changeView = changeView;
 
         activate();
 
         function activate() {
-            console.log('LICENSE PLATE SEARCH ACTIVATED');
+            console.log('DRIVER SEARCH ACTIVATED');
         }
 
         function changeView(isValid){
             if (isValid) {
                 //call search service when ready
 
-                $location.path('/searchDriver');
+                $location.path('/videoChatPolice');
             }
         }
     }

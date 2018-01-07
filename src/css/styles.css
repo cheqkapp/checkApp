@@ -17,21 +17,15 @@ body {
 }
 
 .main {
-  /*position: absolute;*/
-  /*top: 30%;*/
-  /*left: 50%;*/
-  /*transform: translate(-50%, -30%);*/
   text-align: center;
   min-width: 200px;
   max-width: 500px;
 }
 
 .main h1 {
-  /*position: relative;*/
-  /*top: -10px;*/
-  font-size: 100%;
+  font-weight: bold;
+  font-size: 15px;
   text-transform: uppercase;
-
 }
 
 .details {
@@ -53,27 +47,6 @@ a {
   text-decoration: none;
 
 }
-.col-centered{
-  float: none;
-  margin: 0 auto;
-}
-
-.element-center{
-  margin:auto;
-  text-align: center;
-}
-
-.center-image{
-  margin:auto;
-  display:block;
-  text-align: center;
-}
-
-.header{
-  margin-top: 15%;
-  margin-bottom:15%;
-}
-
 
 #welcome {
   max-width: 215px;
@@ -145,37 +118,37 @@ a {
 }
 
 #accept {
-  background: url(phone-receiver.png) 50% 50% no-repeat;
+  background: url(../images/phone-receiver.png) 50% 50% no-repeat;
   background-size: 40px;
   background-color: green;
 }
 
 #rejectwmess {
-  background: url(message.png) 50% 50% no-repeat;
+  background: url(../images/message.png) 50% 50% no-repeat;
   background-size: 40px;
   background-color: yellow;
 }
 
 #reject {
-  background: url(phone-hang-up.png) 50% 50% no-repeat;
+  background: url(../images/phone-hang-up.png) 50% 50% no-repeat;
   background-size: 40px;
   background-color: red;
 }
 
 #mute {
-  background: url(muted.png) 50% 50% no-repeat;
+  background: url(../images/muted.png) 50% 50% no-repeat;
   background-size: 40px;
   background-color: blue;
 }
 
 #bluetooth {
-  background: url(headphones.png) 50% 50% no-repeat;
+  background: url(../images/headphones.png) 50% 50% no-repeat;
   background-size: 40px;
   background-color: blue;
 }
 
 #sos {
-  background: url(sos.png) 50% 50% no-repeat;
+  background: url(../images/sos.png) 50% 50% no-repeat;
   background-size: 40px;
   background-color: blue;
 }
@@ -187,10 +160,8 @@ a {
 
 }
 
-
-
 .garage {
-  background: url(cartop.png) 50% 50% no-repeat;
+  background: url(../images/cartop.png) 50% 50% no-repeat;
   background-size: cover;
   min-width: 200px;
   min-height: 400px;
@@ -202,7 +173,7 @@ a {
   width: 100%;
   height: 100%;
   margin: 0;
-  background: url(officer.jpg) 50% 0% no-repeat;
+  background: url(../images/officer.jpg) 50% 0% no-repeat;
   background-size: cover;
 }
 
@@ -213,7 +184,7 @@ a {
   background-color: white;
   width: 100px;
   height: 150px;
-  background: url(face.jpeg) no-repeat 50% 50%;
+  background: url(../images/face.jpeg) no-repeat 50% 50%;
   background-size: cover;
   box-shadow: 1px 1px 10px black;
 }
@@ -231,7 +202,7 @@ a {
 #endcall {
   display: block;
   margin: auto;
-  background: url(phone-hang-up.png) 50% 50% no-repeat;
+  background: url(../images/phone-hang-up.png) 50% 50% no-repeat;
   background-size: 40px;
   background-color: red;
 }
@@ -261,7 +232,7 @@ a {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   color: snow;
-  display: none; //toggle between block and none
+  display: none; /*toggle between block and none*/
 }
 
 #incoming img {
@@ -275,7 +246,7 @@ a {
 }
 
 #mainBlur {
-  filter: none; //toggle between none and blur (5px)
+  filter: none; /*toggle between none and blur (5px)*/
 }
 
 .police {
@@ -298,7 +269,7 @@ a {
   background-color: grey;
   width: 50%;
   height: 100%;
-  background: url(officer.jpg) 50% 0% no-repeat;
+  background: url(../images/officer.jpg) 50% 0% no-repeat;
   background-size: cover;
 }
 
@@ -311,7 +282,7 @@ a {
   background-color: grey;
   width: 50%;
   height: 100%;
-  background: url(face-tel.jpeg) 50% 0% no-repeat;
+  background: url(../images/face-tel.jpeg) 50% 0% no-repeat;
   background-size: cover;
 }
 
@@ -341,7 +312,7 @@ a {
 }
 
 #copend {
-  background: url(phone-hang-up.png) 50% 50% no-repeat;
+  background: url(../images/phone-hang-up.png) 50% 50% no-repeat;
   background-size: 40px;
   position: absolute;
   bottom: 0;
@@ -546,3 +517,30 @@ a {
 .margin-left-md { margin-left: 1em; }
 .margin-left-lg { margin-left: 1.5em; }
 .margin-left-xl { margin-left: 3em; }
+
+/*Form validation classes*/
+.help-block{
+  color:red;
+}
+
+/*Overrides */
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.element-center{
+  margin:auto;
+  text-align: center;
+}
+
+.center-image{
+  margin:auto;
+  display:block;
+  text-align: center;
+}
+
+.header{
+  margin-top: 15%;
+  margin-bottom:15%;
+}

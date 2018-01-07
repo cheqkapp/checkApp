@@ -1,31 +1,12 @@
-<!doctype html>
-<html>
+<div class="col-md-3 col-centered main">
+    <h1 class="margin-top-xl padding-top-xl">Input License Plate</h1>
+    <img class="center-image" src="../../images/license-plate.png" alt="Pic Icon">
+    <p>&nbsp;</p>
+    <form id="licensePlate" name="licensePlate" ng-submit="vm.changeView(licensePlate.$valid)" novalidate>
+        <input id="plateNumber" name="plateNumber"  class="btn-input" type="text" placeholder="License Plate#" ng-model="plateNumber" required ng-minlength="6" ng-maxlength="8" ><br/>
+        <p ng-show="licensePlate.plateNumber.$pristine" class="help-block" required>A valid license plate is required</p>
+        <p ng-show="licensePlate.plateNumber.$invalid" class="help-block" required>The license plate must have at least 6 characters</p>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Check App">
-    <meta name="keyworkds" content="">
-    <meta name="author" content="Umair Shahbaz">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Check App</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="animate.css">
-</head>
-
-<body>
-  <section class="main">
-    <h1>Input License Plate</h1>
-    <img src="../../images/license-plate.png" alt="Pic Icon">
-    <p>.</p>
-    <div class="options">
-      <form action="../driverSearch/police-call.html">
-        <input class="btn-input" type="text" name="" placeholder="License Plate#"><br/>
-        <input class="icon" type="image" name="submit" src="../../images/arrow.png" alt="Submit">
-      </form>
-
-    </div>
-  </section>
-
-</body>
-</html>
+        <input class="icon center-image" type="image" name="submit" src="../../images/arrow.png" alt="Submit">
+    </form>
+</div>

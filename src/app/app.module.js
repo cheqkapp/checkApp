@@ -6,7 +6,9 @@
         'core',
         'layout',
         'welcome',
-        'login'
+        'login',
+        'licensePlate',
+        'searchDriver'
     ]);
 
     app
@@ -44,6 +46,22 @@
                 controllerAs: 'vm',
                 label: 'Login',
                 appTitle: 'Login'
+            })
+
+            .when('/licensePlate',{
+                templateUrl: 'app/searchLicensePlate/licensePlate.html',
+                controller: 'LicensePlateController',
+                controllerAs: 'vm',
+                label: 'License Plate Search',
+                appTitle: 'License Plate Search'
+            })
+
+            .when('/searchDriver',{
+                templateUrl: 'app/searchDriver/searchDriver.html',
+                controller: 'SearchDriverController',
+                controllerAs: 'vm',
+                label: 'Driver Search',
+                appTitle: 'Driver Search'
             })
 
             .otherwise({
