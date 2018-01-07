@@ -223,7 +223,13 @@ gulp.task('build',['clean'],function(done) {
 //start local server and view application in chrome
 gulp.task('server',['connect'] ,function(done) {
     gulp.watch('src/**/*.html',function(){
-        run(['images','copy:root','copy:lib','copy:scripts'],function(){
+        run(['copy:root','copy:scripts','copy:css'],function(){
+            done();
+        });
+    });
+
+    gulp.watch('src/**/*.css',function(){
+        run(['copy:css'],function(){
             done();
         });
     });
