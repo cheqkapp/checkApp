@@ -10,7 +10,7 @@ Run `gulp server`
 
 After build is completed an window will open starting the app at http://localhost:8000
 
-## Running unit tests locally with Debug in Chrome browser - COMING SOON##
+## Running unit tests locally with Debug in Chrome browser - COMING SOON ##
 While writing unit tests it is much easier to test your unit tests locally by using the command: `karma start karma.conf.js` under emily-core/core/app directory
 
 This will open unit tests in a browser so that you could easily debug and see which tests are failing
