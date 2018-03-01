@@ -1,0 +1,23 @@
+<div class="col-md-3 col-centered main">
+    <h1>Details</h1>
+    <div class="details">
+        <p>Name: Jane Doe</p>
+        <p>License #: 5146874</p>
+        <p>Citation #: 3459876</p>
+        <p>Court Date: 12/15/2017</p>
+        <p>Offenses:
+        <ul>
+            <li>Speeding 10-15mph over</li>
+            <li>Illegal Lane Change</li>
+            <li>Illegal U-Turn</li>
+        </ul>
+    </div>
+
+    <div class="">
+        <a ng-click="vm.changeRoute('policeReport')"><h1 class="btn-long">Fill Report</h1></a>
+        <h1 class="btn-long">Save for Later</h1>
+    </div>
+</div>
+<div class="col-md-12 col-centered">
+    <a class="btn-square footer" ng-click="vm.changeRoute('licensePlate')" >Done</a>
+</div>

@@ -5,55 +5,74 @@
         .module('videoChatPolice')
         .controller('VideoChatPoliceController', VideoChatPoliceController);
 
-    VideoChatPoliceController.$inject = ['$location'];
+    VideoChatPoliceController.$inject = ['$location','$uibModal','logger'];
     /* @ngInject */
-    function VideoChatPoliceController($location) {
+    function VideoChatPoliceController($location,$uibModal,logger) {
         var vm = this;
-        vm.changeView = changeView;
-        vm.citationSummary = citationSummary;
-        vm.openCitation = openCitation;
-        vm.closeCitation = closeCitation;
-        vm.openConfirm = openConfirm;
-        vm.closeConfirm = closeConfirm;
+        vm.changeRoute = changeRoute;
+        vm.openCitation = function () {
+
+            var modalInstance = $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'citationModal.html',
+                controller: 'ModalInstanceCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    items: function () {
+                        return vm.violations;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                vm.selected = selectedItem;
+                logger.log(vm.selected);
+            }, function () {
+                logger.log('Modal dismissed at: ' + new Date());
+            });
+        };
 
         activate();
 
         function activate() {
             console.log('POLICE VIDEO CHAT ACTIVATED');
+            violations();
         }
 
-        function changeView(isValid){
-            if (isValid) {
-                //call search service when ready
-
-                $location.path('/');
-            }
+        function violations(){
+            vm.violations = [
+                {type:"Speeding",id:"speeding",additionalInfo:{id:"milesOverLimit",placeholder:"Speed"}},
+                {type:"Illegal U-Turn",id:"illegalUturn"},
+                {type:"Unsafe Speed",id:"unsafeSpeed"},
+                {type:"Unsafe Lane Change",id:"unsafeLaneChange"}
+            ];
         }
 
-        function citationSummary() {
-            //Make this a modal and show citationSummary
-            window.open("police-details.html", "_self", "police-info");
+        function changeRoute(route) {
+            $location.path(route);
         }
 
-        function openCitation() {
-            document.getElementById('citationinput').style.display="block";
-        }
-
-        function closeCitation() {
-            document.getElementById('citationinput').style.display="none";
-            window.name = "done";
-        }
-
-        function openConfirm() {
-            document.getElementById('citationconfirm').style.display="block";
-        }
-
-        if (window.name == "done") {
-            setTimeout(openConfirm, 3500);
-        }
-
-        function closeConfirm() {
-            document.getElementById('citationconfirm').style.display="none";
-        }
     }
 })();
+
+angular.module('videoChatPolice').controller('ModalInstanceCtrl', function ($uibModalInstance, items, logger) {
+    var vm = this;
+    vm.items = items;
+    vm.selected = {};
+    vm.form ={};
+
+    vm.ok = function () {
+        if (vm.selected.item !== undefined) {
+            //post to citation service here
+            $uibModalInstance.close(vm.selected.item);
+            logger.success('Citation Signed!');
+        } else {
+            console.log('Violations Form Not In Scope');
+        }
+    };
+
+    vm.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});

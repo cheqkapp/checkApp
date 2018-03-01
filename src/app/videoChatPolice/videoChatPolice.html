@@ -2,7 +2,7 @@
   <div class="policecallbox">
     <div class="copbox"></div>
     <div class="perpbox">
-      <div class="btn-circle" onclick="vm.citationSummary()" id="copend"></div>
+      <div class="btn-circle btn-actions" ng-click="vm.changeRoute('citationSummary')" id="copend"></div>
     </div>
   </div>
 
@@ -24,19 +24,27 @@
       </div>
     </div>
   </div>
-  <h1 class="btn-long" onclick="vm.openCitation()">Write Citation</h1>
-  <div id="citationinput">
-    <h3>Please Choose a Violation:</h3>
-    <form>
-      <p><input type="checkbox">Speeding:<input type="text" placeholder="Speed"></p>
-      <p><input type="checkbox">Illegal U-Turn</p>
-      <p><input type="checkbox">Unsafe Speed</p>
-      <p><input type="checkbox">Unsafe Lane Change</p>
-      <input type="submit" class="btn-long" onclick="vm.closeCitation()">
-    </form>
-  </div>
-  <div id="citationconfirm">
-    <h3>Citation Signed!</h3>
-    <button class="btn-long" onclick="vm.closeConfirm()">OK</button>
-  </div>
+  <h1 class="btn-long" ng-click="vm.openCitation()">Write Citation</h1>
+
+  <script type="text/ng-template"  id="citationModal.html">
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Please Choose a Violation:</h3>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <p ng-show="vm.selected.item == undefined" class="help-block">Please choose an option!</p>
+
+          <p ng-repeat="violation in vm.items">
+            <input id="{{violation.id}}" name="violation" type="radio" ng-click="vm.selected.item = violation">&nbsp; {{violation.type}} &nbsp;
+            <input ng-if="violation.additionalInfo !== undefined" id="{{violation.additionalInfo.id}}" type="text" placeholder="{{violation.additionalInfo.placeholder}}">
+
+          </p>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" ng-click="vm.ok()">Submit</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+      </div>
+
+  </script>
 </div>

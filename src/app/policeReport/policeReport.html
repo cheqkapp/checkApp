@@ -1,0 +1,26 @@
+<div class="main col-md-3 col-centered">
+    <h1>Police Report</h1>
+    <div class="details">
+        <form id="policeReport" action="">
+            <p>Name:<input type="text" value="Jane Doe"></p>
+            <p>License #:<input type="text" value="5146874"></p>
+            <p>Citation #:<input type="text" value="3459876"></p>
+            <p>Court Date:<input type="text" value="12/15/2017"></p>
+            <p>Offenses:</p>
+            <select>
+                <option ng-repeat="offense in vm.offenses">{{offense}}</option>
+            </select>
+            <p>Details:</p>
+            <textarea rows="10" cols="30" placeholder="Fill in Details here"></textarea>
+            <input type="submit" class="btn-long">
+        </form>
+    </div>
+
+    <div class="">
+        <h1 class="btn-long">Save for Later</h1>
+
+    </div>
+
+</div>
+<a class="btn-square" ng-click="vm.changeRoute('citationSummary')">Done</a>
+

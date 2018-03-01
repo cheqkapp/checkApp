@@ -9,7 +9,10 @@
 
         'blocks.exception',
         'blocks.logger',
-        'blocks.router'
+        'blocks.router',
+
+        'ui.bootstrap'
+
     ]);
 
 })();

@@ -9,7 +9,9 @@
         'login',
         'licensePlate',
         'searchDriver',
-        'videoChatPolice'
+        'videoChatPolice',
+        'citationSummary',
+        'policeReport'
     ]);
 
     app
@@ -71,6 +73,22 @@
                 controllerAs: 'vm',
                 label: 'Police Video Call',
                 appTitle: 'Police Video Call'
+            })
+
+            .when('/citationSummary',{
+                templateUrl: 'app/citationSummary/citationSummary.html',
+                controller: 'CitationSummaryController',
+                controllerAs: 'vm',
+                label: 'Citation Summary',
+                appTitle: 'Citation Summary'
+            })
+
+            .when('/policeReport',{
+                templateUrl: 'app/policeReport/policeReport.html',
+                controller: 'PoliceReportController',
+                controllerAs: 'vm',
+                label: 'Police Report',
+                appTitle: 'Police Report'
             })
 
             .otherwise({
