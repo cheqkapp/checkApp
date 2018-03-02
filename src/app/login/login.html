@@ -1,12 +1,14 @@
+<div us-spinner spinner-key="waiting"></div>
 <div class="col-md-4 col-centered">
     <img class="center-image margin-top-xl padding-top-xl" id="mailicon" src="../../images/envelope.png" alt="Mail Icon">
     <p>&nbsp;</p>
     <p class="element-center padding-top-xl padding-bottom-xs ">Enter your Email and Password, or create an Account</p>
+    <p ng-show="vm.errorMessage !== ''">{{vm.errorMessage}}</p>
     <form id="login" name="login" ng-submit="vm.changeView(login.$valid)" novalidate>
-        <input id="user" class="btn-input" type="email" name="user" placeholder="Email" ng-model="email" required >
+        <input id="user" class="btn-input" type="email" name="user" placeholder="Email" ng-model="vm.email" required >
         <p ng-show="login.user.$pristine || login.user.$invalid" class="help-block">A valid email is required.</p>
 
-        <input id="password" class="btn-input" type="password" name='password' placeholder="Password" ng-model="password" required>
+        <input id="password" class="btn-input" type="password" name='password' placeholder="Password" ng-model="vm.password" required>
         <p ng-show="login.password.$pristine || login.user.$invalid" class="help-block">Password is required.</p>
 
         <input class="center-image" type="image" name="submit"  alt="Submit" src="../../images/arrow.png">

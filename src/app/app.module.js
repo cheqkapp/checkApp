@@ -4,6 +4,7 @@
     const app = angular.module('app', [
         'ngCookies',
         'core',
+        'angularSpinner',
         'layout',
         'welcome',
         'login',

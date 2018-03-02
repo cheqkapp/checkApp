@@ -11,7 +11,9 @@
         'blocks.logger',
         'blocks.router',
 
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'helpers',
+        'services'
 
     ]);
 
