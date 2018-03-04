@@ -1,9 +1,11 @@
+<div us-spinner spinner-key="waiting"></div>
 <div class="col-md-3 col-centered main">
     <h1 class="margin-top-xl padding-top-xl">Input License Plate</h1>
     <img class="center-image" src="../../images/license-plate.png" alt="Pic Icon">
     <p>&nbsp;</p>
+    <p class="help-block" ng-show="vm.errorMessage !== ''">{{vm.errorMessage}}</p>
     <form id="licensePlate" name="licensePlate" ng-submit="vm.changeView(licensePlate.$valid)" novalidate>
-        <input id="plateNumber" name="plateNumber"  class="btn-input" type="text" placeholder="License Plate#" ng-model="plateNumber" required ng-minlength="6" ng-maxlength="8" ><br/>
+        <input id="plateNumber" name="plateNumber"  class="btn-input" type="text" placeholder="License Plate#" ng-model="vm.plateNumber" required ng-minlength="6" ng-maxlength="8" ><br/>
         <p ng-show="licensePlate.plateNumber.$pristine" class="help-block" required>A valid license plate is required</p>
         <p ng-show="licensePlate.plateNumber.$invalid" class="help-block" required>The license plate must have at least 6 characters</p>
 

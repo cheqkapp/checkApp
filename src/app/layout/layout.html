@@ -13,7 +13,7 @@
     <div id="menupanel">
         <div id="menuinner">
             <img src="../../images/Check_logo.png" alt="Logo">
-            <ul>
+            <ul class="menu-items">
                 <a href="police-info.html"><li>Account</li></a>
                 <li>Payments</li>
                 <li>Citations</li>
@@ -21,7 +21,7 @@
                 <li>Settings</li>
                 <li>About</li>
                 <li>Help</li>
-                <li>Sign out</li>
+                <li ng-click="vm.signOut()">Sign out</li>
             </ul>
         </div>
     </div>

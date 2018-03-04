@@ -1,0 +1,20 @@
+
+  <div id="mainBlur" ng-class="{'blur-effect': vm.incomingCall == true}" class="main col-md-6 col-centered">
+    <h1>Garage</h1>
+    <div class="garage"></div>
+  </div>
+
+  <div ng-show="vm.incomingCall" id="incoming" class="main col-md-6 col-centered">
+    <div class="main">
+      <h2>Please pull over</h2>
+      <h2>Incoming Call...</h2>
+      <img class="center-image" src="../../images/officer.jpg" alt="Officer Pic">
+      <h3>Officer Brady</h3>
+    </div>
+    <div class="call-panel">
+      <a ng-click="vm.changeRoute('videoChatDriver')"><div class="btn-circle" id="accept"></div></a>
+      <div class="btn-circle" id="rejectwmess"></div>
+      <div class="btn-circle" id="reject" ng-click="vm.rejectIncomingCall()"></div>
+    </div>
+  </div>
+

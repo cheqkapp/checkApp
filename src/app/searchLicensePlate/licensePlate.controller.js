@@ -5,11 +5,12 @@
         .module('licensePlate')
         .controller('LicensePlateController', LicensePlateController);
 
-    LicensePlateController.$inject = ['$location'];
+    LicensePlateController.$inject = ['$location','DriversService','usSpinnerService','$cookies'];
     /* @ngInject */
-    function LicensePlateController($location) {
+    function LicensePlateController($location, DriversService, usSpinnerService, $cookies) {
         var vm = this;
         vm.changeView = changeView;
+        vm.errorMessage = "";
 
         activate();
 
@@ -19,9 +20,18 @@
 
         function changeView(isValid){
             if (isValid) {
-                //call search service when ready
-
-                $location.path('/searchDriver');
+                usSpinnerService.spin('waiting');
+                DriversService.findDriver({plateNumber:vm.plateNumber}).then(function(data){
+                    usSpinnerService.stop('waiting');
+                    if(!_.isEmpty(data)){
+                        vm.errorMessage = "";
+                        $cookies.putObject('driver',data.data.Item);
+                        console.log($cookies.getObject('driver'));
+                        $location.path('/searchDriver');
+                    }else{
+                        vm.errorMessage = "License Plate is not in our system"
+                    }
+                });
             }
         }
     }

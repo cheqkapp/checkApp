@@ -25,17 +25,18 @@
                     usSpinnerService.stop('waiting');
                     if(!_.isEmpty(data)){
                         vm.errorMessage = "";
-                        console.log(data);
-                        $cookies.putObject('user',data);
-                        console.log($cookies.getObject(user));
+                        $cookies.putObject('users',data.data.Item);
+                        vm.userInfo = $cookies.getObject('users');
+                        if(vm.userInfo.userType === "officer"){
+                            $location.path('/licensePlate');
+                        }else{
+                            $location.path('/customerInformation');
+                        }
+
                     }else{
                         vm.errorMessage = "Invalid User Credentials, please retry."
                     }
                 });
-
-                //called login service when created
-
-                //$location.path('/licensePlate');
             }
         }
     }

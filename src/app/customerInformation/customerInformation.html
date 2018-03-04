@@ -1,0 +1,91 @@
+<div class="col-md-3 col-centered main">
+    <h1>Input Info</h1>
+    <img src="../../images/photo-camera.png" alt="Pic Icon">
+    <p>.</p>
+    <div class="options">
+        <a ng-click="vm.openDriversLicense()"><div class="btn-option"><img src="../../images/driver-license.png" alt="Driver's License">Driver's License</div></a>
+        <a ng-click="vm.openInsurance()"><div class="btn-option"><img src="../../images/insurance.png" alt="Insurance">Insurance</div></a>
+        <a ng-click="vm.openRegistration()"><div class="btn-option"><img src="../../images/edit.png" alt="Registration">Registration</div></a>
+        <a ng-click="vm.openCarInfo()"><div class="btn-option"><img src="../../images/car.png" alt="Car Info">Car Info</div></a>
+    </div>
+</div>
+<a class="btn-square footer" ng-click="vm.changeView('garage')">Done</a>
+
+<script type="text/ng-template"  id="driversLicense.html">
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="drivers-license-title">Drivers License</h3>
+    </div>
+    <div class="modal-body" id="drivers-license-body">
+            <div class="col-md-12 col-centered ">
+                <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
+                <p class="text-center">Click Icon to Update Photo</p>
+                <img class="center-image" src="../../images/license.jpg">
+            </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" ng-click="vm.ok()">Submit</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
+
+</script>
+
+<script type="text/ng-template"  id="driverInsurance.html">
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="driver-insurance-title">Insurance Card</h3>
+    </div>
+    <div class="modal-body" id="driver-insurance-body">
+        <div class="col-md-12 col-centered">
+             <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
+            <p class="text-center">Tap Icon to Update Photo</p>
+                <img class="center-image" src="../../images/insurance.gif">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" ng-click="vm.ok()">Submit</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
+
+</script>
+
+<script type="text/ng-template"  id="driverRegistration.html">
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="driver-registration-title">Registration</h3>
+    </div>
+    <div class="modal-body" id="driver-registration-body">
+        <div class="col-md-12 col-centered">
+            <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
+            <p class="text-center">Tap Icon to Update Photo</p>
+            <img class="center-image" src="../../images/registration.jpg">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" ng-click="vm.ok()">Submit</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
+
+</script>
+
+<script type="text/ng-template"  id="driverCarInfo.html">
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="car-info-title">Vehicle Info</h3>
+    </div>
+    <div class="modal-body" id="car-info-body">
+        <div class="col-md-12 col-centered">
+            <div class="text-center">
+                <p>Year: 2017</p>
+                <p>Make: Tesla</p>
+                <p>Model: S</p>
+                <p>VIN: 5YJSA1E2XHF156789</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" ng-click="vm.ok()">Submit</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
+
+</script>

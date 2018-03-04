@@ -28,6 +28,10 @@ body {
   text-transform: uppercase;
 }
 
+.menu-items li:hover{
+  cursor:pointer;
+}
+
 .details {
   text-align: left;
   font-weight: 600;
@@ -166,9 +170,9 @@ a {
 
 .garage {
   background: url(../images/cartop.png) 50% 50% no-repeat;
-  background-size: cover;
+  background-size: 50%;
   min-width: 200px;
-  min-height: 400px;
+  min-height: 480px;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7));
 }
@@ -193,14 +197,13 @@ a {
   box-shadow: 1px 1px 10px black;
 }
 
-.panel {
+.call-panel {
   position: absolute;
   margin-left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
   text-align: center;
   min-width: 300px;
-
 }
 
 #endcall {
@@ -232,11 +235,12 @@ a {
 }
 
 #incoming {
-  height: 100%;
-  width: 100%;
+  height: 600px;
+  width: 500px;
   background-color: rgba(0, 0, 0, 0.5);
   color: snow;
-  display: none; /*toggle between block and none*/
+  position: relative;
+  top: -485px;
 }
 
 #incoming img {
@@ -247,6 +251,16 @@ a {
   width: 150px;
   border-radius: 50%;
   box-shadow: 3px 3px 10px black;
+}
+
+#incoming h2{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#incoming h3{
+  font-size:20px;
+  font-weight: bold;
 }
 
 #mainBlur {
@@ -407,7 +421,9 @@ a {
   font-weight: 700;
 }
 
-
+.blur-effect{
+  filter:'blur(5px)';
+}
 
 #citationconfirm {
   border-width: 3px;

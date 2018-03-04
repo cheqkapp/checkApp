@@ -12,7 +12,9 @@
         'searchDriver',
         'videoChatPolice',
         'citationSummary',
-        'policeReport'
+        'policeReport',
+        'customerInformation',
+        'garage'
     ]);
 
     app
@@ -90,6 +92,22 @@
                 controllerAs: 'vm',
                 label: 'Police Report',
                 appTitle: 'Police Report'
+            })
+
+            .when('/customerInformation',{
+                templateUrl: 'app/customerInformation/customerInformation.html',
+                controller: 'CustomerInformationController',
+                controllerAs: 'vm',
+                label: 'Customer Information',
+                appTitle: 'Customer Information'
+            })
+
+            .when('/garage',{
+                templateUrl: 'app/garage/garage.html',
+                controller: 'GarageController',
+                controllerAs: 'vm',
+                label: 'Garage',
+                appTitle: 'Garage'
             })
 
             .otherwise({
