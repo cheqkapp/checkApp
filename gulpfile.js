@@ -15,6 +15,30 @@ const _ = require('lodash');
 const run = require('run-sequence');
 const rev = require('gulp-rev');
 const replaceInFile = require('replace-in-file');
+const awspublish = require('gulp-awspublish');
+const localConfig = {
+    getAwsConf: function(environment) {
+        var conf = config.awsBuckets;
+        if (!conf[environment]) {
+            throw 'No aws conf for env: ' + environment;
+        }
+        if (!conf[environment + 'Headers']) {
+            throw 'No aws headers for env: ' + environment;
+        }
+        return { keys: conf[environment], headers: conf[environment + 'Headers'] };
+    }
+};
+
+gulp.task('publishS3', ['localBuild'], function() {
+    var awsConf = localConfig.getAwsConf('development');
+    var publisher = awspublish.create(awsConf.keys);
+    return gulp.src('./dist/**/*')
+        .pipe(awspublish.gzip({ ext: '' }))
+        .pipe(publisher.publish(awsConf.headers))
+        .pipe(publisher.cache())
+        .pipe(publisher.sync())
+        .pipe(awspublish.reporter());
+});
 
 
 // delete build folder
