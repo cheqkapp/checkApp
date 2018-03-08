@@ -179,7 +179,7 @@ a {
 
 .call {
   width: 100%;
-  height: 100%;
+  height: 775px;
   margin: 0;
   background: url(../images/officer.jpg) 50% 0% no-repeat;
   background-size: cover;
@@ -401,7 +401,6 @@ a {
   position: absolute;
   bottom: 0;
   background-color: steelblue;
-  display: none;
 }
 
 #ticketpopup p {

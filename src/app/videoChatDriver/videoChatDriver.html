@@ -1,0 +1,27 @@
+<section class="call">
+    <div class="callbox"></div>
+    <div class="call-panel">
+        <div class="btn-circle" id="mute"></div>
+        <a href=""><div class="btn-circle" id="bluetooth"></div></a>
+        <a href=""><div class="btn-circle" id="sos"></div></a>
+        <div ng-click="vm.changeRoute('ticketDetail')" class="btn-circle" id="endcall"></div>
+    </div>
+</section>
+
+<section id="ticketpopup" ng-show="vm.ticketpopup">
+    <p>Do you agree to show up to court for the following charges:</p>
+    <ul>
+        <li>Speeding: 10-15mph over speed limit</li>
+        <li>Unsafe Lane Change</li>
+    </ul>
+    <p>On the following date:</p>
+    <ul>
+        <li>Date: 01/20/2018</li>
+    </ul>
+    <p>This is not an admission of guilt.</p>
+
+    <form class="formdiv">
+        <input type="text" placeholder="Sign Here">
+        <input ng-click="vm.signForm()" type="image" src="../../images/arrow.png" style="width: 50px;" alt="Submit">
+    </form>
+</section>

@@ -11,10 +11,13 @@
         'licensePlate',
         'searchDriver',
         'videoChatPolice',
+        'videoChatDriver',
         'citationSummary',
         'policeReport',
         'customerInformation',
-        'garage'
+        'garage',
+        'ticketDetail',
+        'payment'
     ]);
 
     app
@@ -78,6 +81,14 @@
                 appTitle: 'Police Video Call'
             })
 
+            .when('/videoChatDriver',{
+                templateUrl: 'app/videoChatDriver/videoChatDriver.html',
+                controller: 'VideoChatDriverController',
+                controllerAs: 'vm',
+                label: 'Driver Video Call',
+                appTitle: 'Driver Video Call'
+            })
+
             .when('/citationSummary',{
                 templateUrl: 'app/citationSummary/citationSummary.html',
                 controller: 'CitationSummaryController',
@@ -108,6 +119,22 @@
                 controllerAs: 'vm',
                 label: 'Garage',
                 appTitle: 'Garage'
+            })
+
+            .when('/ticketDetail',{
+                templateUrl: 'app/ticketDetail/ticketDetail.html',
+                controller: 'TicketDetailController',
+                controllerAs: 'vm',
+                label: 'Ticket Detail',
+                appTitle: 'Ticket Detail'
+            })
+
+            .when('/payment',{
+                templateUrl: 'app/payment/payment.html',
+                controller: 'PaymentController',
+                controllerAs: 'vm',
+                label: 'Payment',
+                appTitle: 'Payment'
             })
 
             .otherwise({

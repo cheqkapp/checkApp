@@ -10,6 +10,7 @@
     function LayoutController($cookies) {
         var vm = this;
         vm.signOut = signOut;
+        vm.changeRoute = changeRoute;
         activate();
         function activate() {
             console.log('LAYOUT ACTIVATED');
@@ -21,7 +22,11 @@
                 $cookies.remove(key);
                 return value
             }));
-            $window.location.href = '/';
+            $window.location.href = $window.location.hostname + '//' +$window.location.hostname;
+        }
+
+        function changeRoute(route) {
+            $window.location.href = $window.location.hostname + '//' +$window.location.hostname + '/' + route;
         }
     }
 })();
