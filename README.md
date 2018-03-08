@@ -25,7 +25,7 @@ NOTE:  Any file path changes made in the karma.conf.js file also need to be made
 
 
 ## S3 Sandbox url ##
-COMING SOON
+http://chequeapp.s3-website-us-east-1.amazonaws.com/#/
 
 ## Local development url ##
 http://localhost:8000/index.html

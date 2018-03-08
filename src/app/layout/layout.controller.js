@@ -5,12 +5,14 @@
         .module('layout')
         .controller('LayoutController', LayoutController);
 
-    LayoutController.$inject = ['$cookies'];
+    LayoutController.$inject = ['$cookies', '$scope', '$location','$window'];
     /* @ngInject */
-    function LayoutController($cookies) {
+    function LayoutController($cookies, $scope, $location, $window) {
         var vm = this;
-        vm.signOut = signOut;
-        vm.changeRoute = changeRoute;
+        $scope.signOut = signOut;
+        $scope.changeRoute = changeRoute;
+        $scope.menuToggle = menuToggle;
+        $scope.showMenu = false;
         activate();
         function activate() {
             console.log('LAYOUT ACTIVATED');
@@ -18,15 +20,22 @@
 
         function signOut(){
             //remove all cookies
-            _.object(_.map($cookies.getAll(), function(value, key) {
-                $cookies.remove(key);
-                return value
-            }));
-            $window.location.href = $window.location.hostname + '//' +$window.location.hostname;
+            console.log(_);
+            // _.mapKeys($cookies.getAll(), function(value, key) {
+            //     $cookies.remove(key);
+            //     return value
+            // });
+            $location.path('/');
+            $scope.showMenu = false;
         }
 
         function changeRoute(route) {
-            $window.location.href = $window.location.hostname + '//' +$window.location.hostname + '/' + route;
+            $location.path('/'+route);
+            $scope.showMenu = false;
+        }
+
+        function menuToggle() {
+            $scope.showMenu = !$scope.showMenu;
         }
     }
 })();

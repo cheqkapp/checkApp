@@ -24,6 +24,7 @@
         .constant('toastr', toastr)
         .constant('moment', moment);
 
+
     app
         .config(routeConfig)
         .config(toastrConfig)
@@ -36,6 +37,10 @@
     };
 
     app.value('about', about);
+
+    app.run(function ($rootScope){
+        $rootScope._ = window._;
+    });
 
     routeConfig.$inject = ['$routeProvider'];
 

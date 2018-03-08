@@ -6,38 +6,26 @@
 </section>
 
 <!--Menu-->
-<div id="menubutton" onclick='menuToggle()'>
+<div ng-controller="LayoutController">
+<div id="menubutton" ng-click='menuToggle()'>
     <img src="../../images/menu.png" alt="Menu">
 </div>
-<section id="menu">
+<section id="menu" ng-show="showMenu">
     <div id="menupanel">
         <div id="menuinner">
             <img src="../../images/Check_logo.png" alt="Logo">
             <ul class="menu-items">
-                <a ng-click="vm.changeRoute('customerInformation')"><li>Account</li></a>
+                <a ng-click="changeRoute('customerInformation')"><li>Account</li></a>
                 <li>Payments</li>
                 <li>Citations</li>
                 <li>Lawyers</li>
                 <li>Settings</li>
                 <li>About</li>
                 <li>Help</li>
-                <li ng-click="vm.signOut()">Sign out</li>
+                <li ng-click="signOut()">Sign out</li>
             </ul>
         </div>
     </div>
 </section>
-
-<script>
-    function menuToggle() {
-        if (document.getElementById('menu').style.display == "block") {
-            document.getElementById('menu').style.display = "none";
-        } else {
-            document.getElementById('menu').style.display = "block";
-        }
-    }
-</script>
 <!--EndMenu-->
-<script>
-    window.name ="";
-
-</script>
+</div>
