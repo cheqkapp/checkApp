@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+h4{
+  font-weight: bold;
+}
+
 .container-fluid{
   padding-right: 0;
   padding-left:0;
@@ -555,4 +559,8 @@ a {
 .infosection h1{
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.citation-list .col-md-12{
+  height: 50px;
 }

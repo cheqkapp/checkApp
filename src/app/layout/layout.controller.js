@@ -5,9 +5,9 @@
         .module('layout')
         .controller('LayoutController', LayoutController);
 
-    LayoutController.$inject = ['$cookies', '$scope', '$location','$window'];
+    LayoutController.$inject = ['$cookies', '$scope', '$location','_', '$window'];
     /* @ngInject */
-    function LayoutController($cookies, $scope, $location, $window) {
+    function LayoutController($cookies, $scope, $location, _, $window) {
         var vm = this;
         $scope.signOut = signOut;
         $scope.changeRoute = changeRoute;
@@ -20,11 +20,11 @@
 
         function signOut(){
             //remove all cookies
-            console.log(_);
-            // _.mapKeys($cookies.getAll(), function(value, key) {
-            //     $cookies.remove(key);
-            //     return value
-            // });
+            console.log($window);
+            _.mapObject($cookies.getAll(), function(value, key) {
+                $cookies.remove(key);
+                return value
+            });
             $location.path('/');
             $scope.showMenu = false;
         }

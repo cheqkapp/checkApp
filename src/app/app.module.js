@@ -13,6 +13,7 @@
         'videoChatPolice',
         'videoChatDriver',
         'citationSummary',
+        'citationList',
         'policeReport',
         'customerInformation',
         'garage',
@@ -37,10 +38,6 @@
     };
 
     app.value('about', about);
-
-    app.run(function ($rootScope){
-        $rootScope._ = window._;
-    });
 
     routeConfig.$inject = ['$routeProvider'];
 
@@ -100,6 +97,14 @@
                 controllerAs: 'vm',
                 label: 'Citation Summary',
                 appTitle: 'Citation Summary'
+            })
+
+            .when('/citationsList',{
+                templateUrl: 'app/citationsList/citationsList.html',
+                controller: 'CitationListController',
+                controllerAs: 'vm',
+                label: 'Citation List',
+                appTitle: 'Citation List'
             })
 
             .when('/policeReport',{
