@@ -17,7 +17,7 @@
             <ul class="menu-items">
                 <a ng-click="changeRoute('customerInformation')"><li>Account</li></a>
                 <li>Payments</li>
-                <a ng-click="changeRoute('citationsList')"><li>Citations</li></a>
+                <a ng-click="changeRoute('citationsList')"><li>Citations <span id="citecount" ng-show="showCiteCount">{{citeCount}}</span></li></a>
                 <li>Lawyers</li>
                 <li>Settings</li>
                 <li>About</li>
