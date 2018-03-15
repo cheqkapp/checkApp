@@ -7,9 +7,11 @@
             <p>Citation #:<input type="text" value="3459876"></p>
             <p>Court Date:<input type="text" value="12/15/2017"></p>
             <p>Offenses:</p>
-            <select>
-                <option ng-repeat="offense in vm.offenses">{{offense}}</option>
-            </select>
+            <label ng-repeat="offense in vm.offenses">
+                <input type="checkbox" name="offenses[]" value="{{offense}}">&nbsp; &nbsp; {{offense}} <br>
+            </label>
+
+
             <p>Details:</p>
             <textarea rows="10" cols="30" placeholder="Fill in Details here"></textarea>
             <input type="submit" class="btn-long">

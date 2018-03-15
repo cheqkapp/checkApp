@@ -4,10 +4,11 @@
     <p>&nbsp;</p>
     <p class="help-block" ng-show="vm.errorMessage !== ''">{{vm.errorMessage}}</p>
     <form id="driverSearch" name="driverSearch" ng-submit="vm.changeView(driverSearch.$valid)" novalidate>
-        <select ng-model="vm.selectedDriver" required>
-            <option value="">Select Driver</option>
-            <option value="{{driver.firstName}} {{driver.lastName}}" ng-repeat="driver in vm.drivers">{{driver.firstName}} {{driver.lastName}}</option>
-        </select>
+        <p ng-repeat="driver in vm.drivers" >
+            <label>
+                <input type="checkbox" name="drivers[]" value="{{driver.firstName}} {{driver.lastName}}">&nbsp;&nbsp;{{driver.firstName}} {{driver.lastName}}
+            </label>
+        </p>
         <input class="icon center-image" type="image" name="submit" src="../../images/arrow.png" alt="Submit">
     </form>
 </div>
