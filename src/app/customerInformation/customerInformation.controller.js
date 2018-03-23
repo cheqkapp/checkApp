@@ -5,11 +5,13 @@
         .module('customerInformation')
         .controller('CustomerInformationController', CustomerInformationController);
 
-    CustomerInformationController.$inject = ['$location','$uibModal', 'logger'];
+    CustomerInformationController.$inject = ['$location','$uibModal', '$cookies','logger', 'usSpinnerService', 'DriversService'];
     /* @ngInject */
-    function CustomerInformationController($location,$uibModal, logger) {
+    function CustomerInformationController($location,$uibModal, $cookies, logger, usSpinnerService, DriversService) {
         var vm = this;
         vm.changeView = changeView;
+        vm.userInfo = $cookies.getObject('users');
+        vm.customerData = {};
         vm.openDriversLicense = function () {
 
             var modalInstance = $uibModal.open({
@@ -100,8 +102,25 @@
 
         activate();
 
+        function getCustomerData(){
+            usSpinnerService.spin('waiting');
+            DriversService.findDriver({plateNumber:vm.userInfo.licensePlateId}).then(function(data){
+                usSpinnerService.stop('waiting');
+                if(!_.isEmpty(data)){
+                    vm.errorMessage = "";
+                    $cookies.putObject('customer',data.data.Item);
+                    vm.customerData = $cookies.getObject('customer');
+                    console.log(vm.customerData);
+                }else{
+                    vm.errorMessage = "License Plate is not in our system"
+                }
+            });
+
+        }
+
         function activate() {
             console.log('CUSTOMER INFO ACTIVATED');
+            getCustomerData();
         }
 
         function changeView(route){

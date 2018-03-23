@@ -1,22 +1,82 @@
 <div class="col-md-3 col-centered main">
-    <h1>Details</h1>
+    <h1>Citation Details</h1>
     <div class="details">
-        <p>Name: Jane Doe</p>
-        <p>License #: 5146874</p>
-        <p>Citation #: 3459876</p>
-        <p>Court Date: 12/15/2017</p>
+        <table class="citation-table">
+            <tr>
+                <td>DL#:</td>
+                <td>1651684</td>
+                <td>State:</td>
+                <td>TX</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>Jane Doe</td>
+                <td>Sex:</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>DOB:</td>
+                <td>01/18/1985</td>
+            </tr>
+            <tr>
+                <td>Make:</td>
+                <td>Toyota</td>
+                <td>Model:</td>
+                <td>Celica</td>
+            </tr>
+            <tr>
+                <td>Year:</td>
+                <td>2005</td>
+                <td>Plate:</td>
+                <td>G457L4</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Citation#:</td>
+                <td>3516465</td>
+                <td>Court Date:</td>
+                <td>12/15/2018</td>
+            </tr>
+            <tr>
+                <td>Officer:</td>
+                <td>Brady</td>
+                <td>Badge#:</td>
+                <td>6565</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>05/15/2018</td>
+            </tr>
+            <tr>
+                <td>Court:</td>
+                <td>Plano Municipal</td>
+            </tr>
+            <tr>
+                <td>Addr.:</td>
+                <td>1234 Ste Hwy 121</td>
+                <td>City:</td>
+                <td>Plano</td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>TX</td>
+                <td>Zip:</td>
+                <td>75075</td>
+            </tr>
+        </table>
+
         <p>Offenses:
         <ul>
-            <li>Speeding 10-15mph over</li>
+            <li>Speeding 15mph+</li>
             <li>Illegal Lane Change</li>
             <li>Illegal U-Turn</li>
         </ul>
     </div>
 
     <div class="">
-        <a ng-click="vm.changeRoute('policeReport')"><h1 class="btn-long">Fill Report</h1></a>
-        <h1 class="btn-long">Save for Later</h1>
+        <a ng-click="vm.changeRoute('payment')"><h1 class="btn-long">Pay Ticket</h1></a>
     </div>
+
 </div>
 <div class="col-md-12 col-centered">
     <a class="btn-square footer" ng-click="vm.changeRoute('licensePlate')" >Done</a>
