@@ -1,8 +1,8 @@
 <div class="police">
   <div class="policecallbox">
     <div class="copbox"></div>
-    <div class="perpbox">
-      <div class="btn-circle btn-actions" ng-click="vm.changeRoute('citationSummary')" id="copend"></div>
+    <div class="perpbox" style="background: url('../../images/uploads/{{vm.driverData.images.profile}}') 50% 50% no-repeat">
+      <div class="btn-circle btn-actions" ng-click="vm.changeRoute('policeReport')" id="copend"></div>
     </div>
   </div>
 
@@ -10,9 +10,9 @@
     <h2>Information</h2>
 
     <div class="docs">
-      <img src="../../images/license.jpg" alt="License">
-      <img src="../../images/insurance.gif" alt="Insurance">
-      <img src="../../images/registration.jpg" alt="Registration">
+      <img ng-src="../../images/uploads/{{vm.driverData.images.license}}" width="50%" height="50%" alt="License">
+      <img ng-src="../../images/uploads/{{vm.driverData.images.insurance}}" width="50%" height="50%" alt="Insurance">
+      <img ng-src="../../images/uploads/{{vm.driverData.images.registration}}" width="50%" height="50%" alt="Registration">
       <div class="prior">
         <h1>Prior Arrests</h1>
         <ul>
@@ -35,7 +35,7 @@
         <p ng-show="vm.selected.item == undefined" class="help-block">Please choose an option!</p>
 
           <p ng-repeat="violation in vm.items">
-            <input id="{{violation.id}}" name="violation" type="radio" ng-click="vm.selected.item = violation">&nbsp; {{violation.type}} &nbsp;
+            <input id="{{violation.id}}" name="violation" type="checkbox" ng-click="vm.selected.item = violation">&nbsp; {{violation.type}} &nbsp;
             <input ng-if="violation.additionalInfo !== undefined" id="{{violation.additionalInfo.id}}" type="text" placeholder="{{violation.additionalInfo.placeholder}}">
 
           </p>

@@ -11,6 +11,7 @@
         var vm = this;
         vm.changeView = changeView;
         vm.errorMessage = "";
+        vm.driverData = $cookies.getObject('driver');
 
         activate();
 
@@ -20,10 +21,12 @@
         }
 
         function getDrivers(){
-            vm.drivers = $cookies.getObject('driver');
-            if(!_.isArray($cookies.getObject('driver'))){
-               vm.drivers = [$cookies.getObject('driver')];
-            }
+            vm.drivers = [{firstName:vm.driverData.firstName,lastName:vm.driverData.lastName}];
+            _.each(vm.driverData.additionalDrivers,function(driver){
+                vm.drivers.push({firstName:driver.firstName,lastName:driver.lastName});
+            });
+
+
         }
 
         function changeView(isValid){

@@ -5,11 +5,13 @@
         .module('videoChatPolice')
         .controller('VideoChatPoliceController', VideoChatPoliceController);
 
-    VideoChatPoliceController.$inject = ['$location','$uibModal','logger'];
+    VideoChatPoliceController.$inject = ['$location','$uibModal','logger', '$cookies'];
     /* @ngInject */
-    function VideoChatPoliceController($location,$uibModal,logger) {
+    function VideoChatPoliceController($location,$uibModal,logger,$cookies) {
         var vm = this;
         vm.changeRoute = changeRoute;
+        vm.driverData = $cookies.getObject('driver');
+
         vm.openCitation = function () {
 
             var modalInstance = $uibModal.open({
