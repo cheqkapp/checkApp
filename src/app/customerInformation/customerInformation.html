@@ -18,11 +18,11 @@
         <h3 class="modal-title" id="drivers-license-title">Drivers License</h3>
     </div>
     <div class="modal-body" id="drivers-license-body">
-            <div class="col-md-12 col-centered ">
-                <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
-                <p class="text-center">Click Icon to Update Photo</p>
-                <img class="center-image" src="../../images/license.jpg">
-            </div>
+        <div class="col-md-12 col-centered ">
+            <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
+            <p class="text-center">Click Icon to Update Photo</p>
+            <img class="center-image" width="50%" height="50%" ng-src="../../images/uploads/{{vm.items.images.license}}">
+        </div>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="submit" ng-click="vm.ok()">Submit</button>
@@ -38,9 +38,9 @@
     </div>
     <div class="modal-body" id="driver-insurance-body">
         <div class="col-md-12 col-centered">
-             <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
+            <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
             <p class="text-center">Tap Icon to Update Photo</p>
-                <img class="center-image" src="../../images/insurance.gif">
+            <img class="center-image" width="50%" height="50%" ng-src="../../images/uploads/{{vm.items.images.insurance}}">
         </div>
     </div>
     <div class="modal-footer">
@@ -59,7 +59,7 @@
         <div class="col-md-12 col-centered">
             <img class="center-image" src="../../images/photo-camera.png" alt="Pic Icon">
             <p class="text-center">Tap Icon to Update Photo</p>
-            <img class="center-image" src="../../images/registration.jpg">
+            <img class="center-image" width="50%" height="50%" ng-src="../../images/uploads/{{vm.items.images.registration}}">
         </div>
     </div>
     <div class="modal-footer">
@@ -76,11 +76,11 @@
     </div>
     <div class="modal-body" id="car-info-body">
         <div class="col-md-12 col-centered">
-            <div class="text-center">
-                <p>Year: 2017</p>
-                <p>Make: Tesla</p>
-                <p>Model: S</p>
-                <p>VIN: 5YJSA1E2XHF156789</p>
+            <div class="text-center" ng-repeat="vehicle in vm.items.vehicles">
+                <p>Year: {{vehicle.year}}</p>
+                <p>Make: {{vehicle.make}}</p>
+                <p>Model: {{vehicle.model}}</p>
+                <p>VIN: {{vehicle.vin}}</p>
             </div>
         </div>
     </div>

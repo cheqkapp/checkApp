@@ -22,7 +22,7 @@
                 controllerAs: 'vm',
                 resolve: {
                     items: function () {
-                        return {};
+                        return vm.customerData;
                     }
                 }
             });
@@ -44,7 +44,7 @@
                 controllerAs: 'vm',
                 resolve: {
                     items: function () {
-                        return {};
+                        return vm.customerData;
                     }
                 }
             });
@@ -66,7 +66,7 @@
                 controllerAs: 'vm',
                 resolve: {
                     items: function () {
-                        return {};
+                        return vm.customerData;
                     }
                 }
             });
@@ -88,7 +88,7 @@
                 controllerAs: 'vm',
                 resolve: {
                     items: function () {
-                        return {};
+                        return vm.customerData;
                     }
                 }
             });
@@ -110,7 +110,6 @@
                     vm.errorMessage = "";
                     $cookies.putObject('customer',data.data.Item);
                     vm.customerData = $cookies.getObject('customer');
-                    console.log(vm.customerData);
                 }else{
                     vm.errorMessage = "License Plate is not in our system"
                 }
@@ -129,10 +128,11 @@
     }
 })();
 
-angular.module('customerInformation').controller('ModalInstanceCtrl', function ($uibModalInstance, logger) {
+angular.module('customerInformation').controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
     var vm = this;
+    vm.items = items;
 
-    vm.form ={};
+    console.log('items',vm.items);
 
     vm.ok = function () {
         $uibModalInstance.dismiss('cancel');

@@ -175,7 +175,7 @@ a {
 .garage {
   background: url(../images/cartop.png) 50% 50% no-repeat;
   background-size: 50%;
-  min-width: 200px;
+  width: 770px;
   min-height: 480px;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7));
