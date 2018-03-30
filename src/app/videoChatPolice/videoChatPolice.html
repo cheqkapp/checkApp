@@ -1,4 +1,4 @@
-<div class="police">
+<div class="police col-centered col-md-8">
   <div class="policecallbox">
     <div class="copbox"></div>
     <div class="perpbox" style="background: url('../../images/uploads/{{vm.driverData.images.profile}}') 50% 50% no-repeat">
@@ -9,19 +9,29 @@
   <div class="infosection">
     <h2>Information</h2>
 
-    <div class="docs">
+    <div class="docs ">
       <img ng-src="../../images/uploads/{{vm.driverData.images.license}}" width="50%" height="50%" alt="License">
       <img ng-src="../../images/uploads/{{vm.driverData.images.insurance}}" width="50%" height="50%" alt="Insurance">
       <img ng-src="../../images/uploads/{{vm.driverData.images.registration}}" width="50%" height="50%" alt="Registration">
-      <div class="prior">
-        <h1>Prior Arrests</h1>
-        <ul>
-          <li>None</li>
-        </ul>
-        <h1>Prior Citations</h1>
-        <ul>
-          <li>Speeding: 02/13/2016</li>
-        </ul>
+      <div class="prior col-md-10 priorsTable">
+
+          <h1>Prior Arrests/Warrants/Citations</h1>
+            <div class="row">
+              <div class="col-md-2"><h2>Case#:</h2></div>
+              <div class="col-md-1"><h2>Citation#:</h2></div>
+              <div class="col-md-3"><h2>Date/Location/Officer</h2></div>
+              <div class="col-md-3"><h2>Type/Status</h2></div>
+              <div class="col-md-1"><h2>Charge(s)</h2></div>
+              <div class="col-md-2"><h2>Document</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">12-1265-12661</div>
+              <div class="col-md-1">6546516</div>
+              <div class="col-md-3">12/24/2016/Plano,TX/Brady</div>
+              <div class="col-md-3">Misdemeanor/Closed</div>
+              <div class="col-md-1">DWI</div>
+              <div class="col-md-2"><button class="warrants-button" ng-click="vm.openDocument('Warrant-of-Arrest.jpg')">Open Record</button></div>
+            </div>
       </div>
     </div>
   </div>
@@ -48,4 +58,19 @@
       </div>
 
   </script>
+
+  <script type="text/ng-template"  id="viewDocument.html">
+    <div class="modal-header">
+      <h3 class="modal-title element-center" id="recordView">Record of Prior Arrest/Warrant/Citation</h3>
+      <div class="modal-body" id="recordViewBody">
+        <img class="center-image" ng-src="../../images/uploads/{{vm.item}}" width="50%" height="50%">
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Close</button>
+      </div>
+
+    </div>
+  </script>
+
 </div>

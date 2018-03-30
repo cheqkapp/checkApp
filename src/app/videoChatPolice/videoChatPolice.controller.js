@@ -35,6 +35,28 @@
             });
         };
 
+        vm.openDocument = function(image){
+
+            var modalInstance = $uibModal.open({
+                ariaLabelledBy: 'recordView',
+                ariaDescribedBy: 'recordViewBody',
+                templateUrl: 'viewDocument.html',
+                controller: 'ModalDocumentInstanceCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    items: function () {
+                        return image;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function () {
+               logger.log('image viewed');
+            }, function () {
+                logger.log('Modal dismissed at: ' + new Date());
+            });
+        };
+
         activate();
 
         function activate() {
@@ -73,6 +95,17 @@ angular.module('videoChatPolice').controller('ModalInstanceCtrl', function ($uib
             console.log('Violations Form Not In Scope');
         }
     };
+
+    vm.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});
+
+angular.module('videoChatPolice').controller('ModalDocumentInstanceCtrl', function ($uibModalInstance, items) {
+    var vm = this;
+    vm.item = items;
+
+    console.log(items);
 
     vm.cancel = function () {
         $uibModalInstance.dismiss('cancel');

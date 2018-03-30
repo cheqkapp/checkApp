@@ -333,12 +333,17 @@ a {
   font-size: 70%;
 }
 
+.priorsTable h2{
+  font-size: 1em !important;
+}
+
 #copend {
   background: url(../images/phone-hang-up.png) 50% 50% no-repeat;
   background-size: 40px;
   position: absolute;
   bottom: 0;
   background-color: red;
+  left: -35px;
 }
 
 #menubutton {
