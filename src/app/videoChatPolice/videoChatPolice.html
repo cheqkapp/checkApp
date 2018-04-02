@@ -1,9 +1,25 @@
 <div class="police col-centered col-md-8">
   <div class="policecallbox">
-    <div class="copbox"></div>
+
+    <div id="cometchat_embed_synergy_container" style="width:100%;height:300px;max-width:100%;border:1px solid #CCCCCC;border-radius:5px;overflow:hidden;" ></div>
+
+    <script>
+        var chat_name = 'Officer_James';
+        var chat_id = 10987654321;
+        var chat_role = 'officer';
+        var iframeObj = {};iframeObj.module="synergy";
+        iframeObj.style="min-height:300px;min-width:100%;";
+        iframeObj.width="100%";iframeObj.height="300px";
+        iframeObj.src="//50668.cometondemand.net/cometchat_embedded.php";
+
+        if(typeof(addEmbedIframe)==="function"){
+            addEmbedIframe(iframeObj);
+        }
+    </script>
+    <!--<div class="copbox"></div>
     <div class="perpbox" style="background: url('../../images/uploads/{{vm.driverData.images.profile}}') 50% 50% no-repeat">
       <div class="btn-circle btn-actions" ng-click="vm.changeRoute('policeReport')" id="copend"></div>
-    </div>
+    </div>-->
   </div>
 
   <div class="infosection">
@@ -13,25 +29,33 @@
       <img ng-src="../../images/uploads/{{vm.driverData.images.license}}" width="50%" height="50%" alt="License">
       <img ng-src="../../images/uploads/{{vm.driverData.images.insurance}}" width="50%" height="50%" alt="Insurance">
       <img ng-src="../../images/uploads/{{vm.driverData.images.registration}}" width="50%" height="50%" alt="Registration">
-      <div class="prior col-md-10 priorsTable">
+    </div>
+    <div class="prior col-md-12 priorsTable">
 
-          <h1>Prior Arrests/Warrants/Citations</h1>
-            <div class="row">
-              <div class="col-md-2"><h2>Case#:</h2></div>
-              <div class="col-md-1"><h2>Citation#:</h2></div>
-              <div class="col-md-3"><h2>Date/Location/Officer</h2></div>
-              <div class="col-md-3"><h2>Type/Status</h2></div>
-              <div class="col-md-1"><h2>Charge(s)</h2></div>
-              <div class="col-md-2"><h2>Document</h2></div>
-            </div>
-            <div class="row">
-              <div class="col-md-2">12-1265-12661</div>
-              <div class="col-md-1">6546516</div>
-              <div class="col-md-3">12/24/2016/Plano,TX/Brady</div>
-              <div class="col-md-3">Misdemeanor/Closed</div>
-              <div class="col-md-1">DWI</div>
-              <div class="col-md-2"><button class="warrants-button" ng-click="vm.openDocument('Warrant-of-Arrest.jpg')">Open Record</button></div>
-            </div>
+      <h1>Prior Arrests/Warrants/Citations</h1>
+      <div class="row">
+        <div class="col-md-2"><h2>Case#:</h2></div>
+        <div class="col-md-1"><h2>Citation#:</h2></div>
+        <div class="col-md-3"><h2>Date/Location/Officer</h2></div>
+        <div class="col-md-3"><h2>Type/Status</h2></div>
+        <div class="col-md-1"><h2>Charge(s)</h2></div>
+        <div class="col-md-2"><h2>Document</h2></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">12-1265-12661</div>
+        <div class="col-md-1">6546516</div>
+        <div class="col-md-3">12/24/2016/Plano,TX/Brady</div>
+        <div class="col-md-3">Misdemeanor/Closed</div>
+        <div class="col-md-1">DWI</div>
+        <div class="col-md-2"><button class="warrants-button" ng-click="vm.openDocument('Warrant-of-Arrest.jpg')">Open Record</button></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">52-1535-12561</div>
+        <div class="col-md-1">1718192</div>
+        <div class="col-md-3">02/13/2016/Frisco,TX/Brady</div>
+        <div class="col-md-3">Misdemeanor/Closed</div>
+        <div class="col-md-1">Speeding</div>
+        <div class="col-md-2"><button class="warrants-button" ng-click="vm.openDocument('Warrant-of-Arrest.jpg')">Open Record</button></div>
       </div>
     </div>
   </div>
@@ -43,10 +67,10 @@
         <h3 class="modal-title" id="modal-title">Please Choose a Violation:</h3>
       </div>
       <div class="modal-body" id="modal-body">
-        <p ng-show="vm.selected.item == undefined" class="help-block">Please choose an option!</p>
+        <p ng-show="vm.selected.items.length === 0" class="help-block">Please choose an option!</p>
 
           <p ng-repeat="violation in vm.items">
-            <input id="{{violation.id}}" name="violation" type="checkbox" ng-click="vm.selected.item = violation">&nbsp; {{violation.type}} &nbsp;
+            <input id="{{violation.id}}" name="violation" type="checkbox" ng-click="vm.addRemoveViolation(violation)">&nbsp; {{violation.type}} &nbsp;
             <input ng-if="violation.additionalInfo !== undefined" id="{{violation.additionalInfo.id}}" type="text" placeholder="{{violation.additionalInfo.placeholder}}">
 
           </p>

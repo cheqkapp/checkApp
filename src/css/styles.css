@@ -309,15 +309,17 @@ a {
 }
 
 .infosection {
-  overflow-x: scroll;
-  height: 45%;
+  overflow-y:scroll;
+  height: 350px;
 }
 
 .docs {
   padding-left: 5px;
   text-align: left;
   float: left;
-  width: 900px;
+  width: 721px;
+  overflow-x:scroll;
+  white-space: nowrap;
 }
 
 .docs img {

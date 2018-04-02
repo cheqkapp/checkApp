@@ -18,7 +18,7 @@
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
                 templateUrl: 'citationModal.html',
-                controller: 'ModalInstanceCtrl',
+                controller: 'ModalInstanceCitationCtrl',
                 controllerAs: 'vm',
                 resolve: {
                     items: function () {
@@ -27,8 +27,8 @@
                 }
             });
 
-            modalInstance.result.then(function (selectedItem) {
-                vm.selected = selectedItem;
+            modalInstance.result.then(function (selectedItems) {
+                vm.selected = selectedItems;
                 logger.log(vm.selected);
             }, function () {
                 logger.log('Modal dismissed at: ' + new Date());
@@ -80,23 +80,35 @@
     }
 })();
 
-angular.module('videoChatPolice').controller('ModalInstanceCtrl', function ($uibModalInstance, items, logger) {
+angular.module('videoChatPolice').controller('ModalInstanceCitationCtrl', function ($uibModalInstance, items, logger, $location) {
     var vm = this;
     vm.items = items;
     vm.selected = {};
+    vm.selected.items = [];
     vm.form ={};
 
+    vm.addRemoveViolation = function(violation){
+        var selectedItems = _.find(vm.selected.items, function(vitem) {return vitem.id === violation.id;});
+        if(selectedItems === undefined) {
+            vm.selected.items.push(violation);
+        }else{
+            vm.selected.items =  vm.selected.items.filter(function( obj ) {return obj.id !== selectedItems.id;});
+        }
+    };
+
     vm.ok = function () {
-        if (vm.selected.item !== undefined) {
+       if (vm.selected.items.length > 0) {
             //post to citation service here
-            $uibModalInstance.close(vm.selected.item);
+            $uibModalInstance.close(vm.selected.items);
             logger.success('Citation Signed!');
+           $location.path('policeReport');
         } else {
             console.log('Violations Form Not In Scope');
         }
     };
 
     vm.cancel = function () {
+        console.log(vm.selected);
         $uibModalInstance.dismiss('cancel');
     };
 });
